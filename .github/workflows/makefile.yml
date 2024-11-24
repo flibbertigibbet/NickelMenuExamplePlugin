@@ -1,0 +1,24 @@
+name: Makefile CI relaease build
+
+on:
+ release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+      - name: Run make
+        uses: docker://ghcr.io/pgaskin/nickeltc:1
+        with:
+          entrypoint: make
+          args: NAME=MySpecialPlugin
+      - name: Upload release artifact
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: KoboRoot.tgz
