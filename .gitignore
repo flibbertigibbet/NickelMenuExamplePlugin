@@ -1,0 +1,13 @@
+# make gitignore
+.kdev4/
+*.kdev4
+.kateconfig
+.vscode/
+.idea/
+.clangd/
+.cache/
+compile_commands.json
+/res/nmexampleplugin_version
+/KoboRoot.tgz
+/libnmexampleplugin.so
+/src/nmexampleplugin.o
