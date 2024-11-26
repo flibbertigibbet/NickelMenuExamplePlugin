@@ -1,6 +1,10 @@
 # Nickel Menu Example Plugin
 Template with an example Qt GUI plugin for Kobo eReaders launched with [NickelMenu](https://pgaskin.net/NickelMenu/)
 
+## Build status
+
+![Latest release](https://github.com/flibbertigibbet/NickelMenuExamplePlugin/actions/workflows/makefile.yml/badge.svg)
+
 ## Building
 
 Check out the [NickelMenu fork with Qt GUI plugin support](https://github.com/flibbertigibbet/NickelMenu) submodule in this repo:
