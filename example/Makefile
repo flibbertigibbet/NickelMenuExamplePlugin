@@ -17,8 +17,8 @@ OBJDUMP       = $(CROSS_COMPILE)objdump
 STRINGS       = $(CROSS_COMPILE)strings
 
 override LIBRARY  := example.so
-override SOURCES  := NMExamplePlugin.cc NMDialog.cc
-override MOCS     := NMExamplePlugin.h NMDialog.h
+override SOURCES  := TemplatePlugin.cc NPDialog.cc
+override MOCS     := TemplatePlugin.h NPDialog.h
 override CXXFLAGS += -fPIC
 
 override OBJECTS_CXX  := $(filter %.o,$(SOURCES:%.cc=%.o))
