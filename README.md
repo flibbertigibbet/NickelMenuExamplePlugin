@@ -28,3 +28,7 @@ Multiple plugins may be built from source code nested in the top-level `src` dir
 ```bash
 docker run -u $(id -u):$(id -g) --volume="$PWD:$PWD" --entrypoint=make --workdir="$PWD" --env=HOME --rm -it ghcr.io/pgaskin/nickeltc:1 clean_all_plugins
 ```
+
+## Credits
+
+Based on [NickelPlugin](https://github.com/shermp/NickelPlugin).

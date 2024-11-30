@@ -1,21 +1,20 @@
-#ifndef NM_DIALOG_H
-#define NM_DIALOG_H
+#ifndef NP_DIALOG_HPP
+#define NP_DIALOG_HPP
 
 #include <QDialog>
 
-class NMDialog : public QDialog
+class NPDialog : public QDialog
 {
     Q_OBJECT
     public:
-        NMDialog(QWidget* parent = nullptr);
-        ~NMDialog();
+        NPDialog(QWidget* parent = nullptr);
+        ~NPDialog() = default;
         void showDlg();
 
     protected:
-        //bool event(QEvent *event) override;
         bool eventFilter(QObject *obj, QEvent *event) override;
     private:
         void installEvFilter(QWidget *w);
 };
 
-#endif // NM_DIALOG_H
+#endif // NP_DIALOG_HPP

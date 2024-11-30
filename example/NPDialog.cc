@@ -1,21 +1,26 @@
 #include <QApplication>
 #include <QComboBox>
+#include <QRect>
+#include <QScreen>
 #include <QTouchEvent>
 
-#include "NMDialog.h"
+#include "NPDialog.h"
 
 const char touchFilterSet[] = "touchFilterSet";
 
-NMDialog::NMDialog(QWidget *parent) : QDialog(parent)
+NPDialog::NPDialog(QWidget *parent) : QDialog(parent)
 {
     setAttribute(Qt::WA_AcceptTouchEvents);
+    QScreen *screen = QGuiApplication::primaryScreen();
+    QRect geom = screen->availableGeometry();
+    int newW = geom.width() * 0.95;
+    int newH = geom.height() * 0.95;
+    int newX = (geom.width() - newW) / 2;
+    int newY = (geom.height() - newH) / 2;
+    setGeometry(newX, newY, newW, newH);
 }
 
-NMDialog::~NMDialog()
-{
-}
-
-bool NMDialog::eventFilter(QObject *obj, QEvent *event)
+bool NPDialog::eventFilter(QObject *obj, QEvent *event)
 {
     auto type = event->type();
     if (type == QEvent::TouchBegin || type == QEvent::TouchUpdate || type == QEvent::TouchEnd) {
@@ -36,7 +41,7 @@ bool NMDialog::eventFilter(QObject *obj, QEvent *event)
     return false;
 }
 
-void NMDialog::installEvFilter(QWidget *w)
+void NPDialog::installEvFilter(QWidget *w)
 {
     if (!w->property(touchFilterSet).isValid()) {
         w->setProperty(touchFilterSet, QVariant(true));
@@ -45,7 +50,7 @@ void NMDialog::installEvFilter(QWidget *w)
     }
 }
 
-void NMDialog::showDlg()
+void NPDialog::showDlg()
 {
     auto children = findChildren<QWidget*>();
     for (int i = 0; i < children.size(); ++i) {
