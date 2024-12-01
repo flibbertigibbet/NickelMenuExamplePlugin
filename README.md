@@ -5,6 +5,10 @@ Template with an example Qt GUI plugin for Kobo eReaders launched with [NickelMe
 
 ![Latest release](https://github.com/flibbertigibbet/NickelMenuExamplePlugin/actions/workflows/makefile.yml/badge.svg)
 
+## Demo
+
+![Demo of a dialog window open on a Kobo Clara Colour. A Nyan Cat GIF animates in the window.](images/demo.gif)
+
 ## Building
 
 Check out the [NickelMenu fork with Qt GUI plugin support](https://github.com/flibbertigibbet/NickelMenu) submodule in this repo:
