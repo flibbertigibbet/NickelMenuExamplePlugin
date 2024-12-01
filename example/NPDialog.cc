@@ -13,8 +13,8 @@ NPDialog::NPDialog(QWidget *parent) : QDialog(parent)
     setAttribute(Qt::WA_AcceptTouchEvents);
     QScreen *screen = QGuiApplication::primaryScreen();
     QRect geom = screen->availableGeometry();
-    int newW = geom.width() * 0.95;
-    int newH = geom.height() * 0.95;
+    int newW = geom.width();
+    int newH = geom.height() * 0.8;
     int newX = (geom.width() - newW) / 2;
     int newY = (geom.height() - newH) / 2;
     setGeometry(newX, newY, newW, newH);
